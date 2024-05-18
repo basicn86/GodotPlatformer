@@ -23,8 +23,10 @@ public partial class Player : RigidBody3D
 		Vector3 moveVector = Vector3.Zero;
 		moveVector.X = Input.GetAxis("move_left", "move_right");
 		moveVector.Z = Input.GetAxis("move_forward", "move_back");
+		moveVector *= TwistPivot.Basis.Inverse();
 
 		moveVector = moveVector.Normalized();
+
 
 		ApplyCentralForce(moveVector * 2000f * (float)delta);
 
