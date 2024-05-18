@@ -17,6 +17,6 @@ public partial class Player : RigidBody3D
 
 		input = input.Normalized();
 
-		ApplyCentralForce(input * 1000f * (float)delta);
+		ApplyCentralForce(input * 2000f * (float)delta);
 	}
 }
